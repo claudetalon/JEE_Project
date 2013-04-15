@@ -1,8 +1,12 @@
 package jee_project
 
-class Student {
+class Student extends User {
 
-	// Empty : all in User
+	
     static constraints = {
     }
+	
+	void answer(Question q){
+		
+	}
 }

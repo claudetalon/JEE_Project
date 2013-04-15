@@ -1,8 +1,16 @@
 package jee_project
 
-class Teacher {
+import java.util.List;
+
+class Teacher extends User {
 	
-	// Empty : all in User
+	
+	List<Question> question
+
     static constraints = {
     }
+	
+	void createQuestion(String questionContent){
+		question.add(new Question(question : questionContent))
+	}
 }
