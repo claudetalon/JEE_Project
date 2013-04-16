@@ -2,6 +2,14 @@
 
 
 
+<div class="fieldcontain ${hasErrors(bean: questionInstance, field: 'status', 'error')} required">
+	<label for="status">
+		<g:message code="question.status.label" default="Status" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select name="status" from="${questionInstance.constraints.status.inList}" required="" value="${questionInstance?.status}" valueMessagePrefix="question.status"/>
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: questionInstance, field: 'answers', 'error')} ">
 	<label for="answers">
 		<g:message code="question.answers.label" default="Answers" />

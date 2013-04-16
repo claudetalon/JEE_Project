@@ -5,15 +5,11 @@ class Question {
 	String question
 	static hasMany = [answers : Answer]
 	static belongsTo = Teacher
-	/*
-	enum State {
-		opened,
-		closed
-	}
-	
-	State status = State.opened
-	*/
+
+	String status
+
     static constraints = {
+		status blank: false, inList: ["closed","opened"]
     }
 	/*
 	void close() {

@@ -23,6 +23,15 @@
 			</g:if>
 			<ol class="property-list question">
 			
+				<g:if test="${questionInstance?.status}">
+				<li class="fieldcontain">
+					<span id="status-label" class="property-label"><g:message code="question.status.label" default="Status" /></span>
+					
+						<span class="property-value" aria-labelledby="status-label"><g:fieldValue bean="${questionInstance}" field="status"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${questionInstance?.answers}">
 				<li class="fieldcontain">
 					<span id="answers-label" class="property-label"><g:message code="question.answers.label" default="Answers" /></span>
