@@ -52,6 +52,15 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${questionInstance?.teacher}">
+				<li class="fieldcontain">
+					<span id="teacher-label" class="property-label"><g:message code="question.teacher.label" default="Teacher" /></span>
+					
+						<span class="property-value" aria-labelledby="teacher-label"><g:link controller="teacher" action="show" id="${questionInstance?.teacher?.id}">${questionInstance?.teacher?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
 			</ol>
 			<g:form>
 				<fieldset class="buttons">

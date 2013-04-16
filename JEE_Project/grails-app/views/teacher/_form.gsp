@@ -39,6 +39,15 @@
 		<g:message code="teacher.questions.label" default="Questions" />
 		
 	</label>
-	<g:select name="questions" from="${jee_project.Question.list()}" multiple="multiple" optionKey="id" size="5" value="${teacherInstance?.questions*.id}" class="many-to-many"/>
+	
+<ul class="one-to-many">
+<g:each in="${teacherInstance?.questions?}" var="q">
+    <li><g:link controller="question" action="show" id="${q.id}">${q?.encodeAsHTML()}</g:link></li>
+</g:each>
+<li class="add">
+<g:link controller="question" action="create" params="['teacher.id': teacherInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'question.label', default: 'Question')])}</g:link>
+</li>
+</ul>
+
 </div>
 

@@ -28,6 +28,10 @@
 					
 						<th><g:message code="answer.question.label" default="Question" /></th>
 					
+						<g:sortableColumn property="valid" title="${message(code: 'answer.valid.label', default: 'Valid')}" />
+					
+						<g:sortableColumn property="vote" title="${message(code: 'answer.vote.label', default: 'Vote')}" />
+					
 					</tr>
 				</thead>
 				<tbody>
@@ -37,6 +41,10 @@
 						<td><g:link action="show" id="${answerInstance.id}">${fieldValue(bean: answerInstance, field: "answer")}</g:link></td>
 					
 						<td>${fieldValue(bean: answerInstance, field: "question")}</td>
+					
+						<td><g:formatBoolean boolean="${answerInstance.valid}" /></td>
+					
+						<td>${fieldValue(bean: answerInstance, field: "vote")}</td>
 					
 					</tr>
 				</g:each>

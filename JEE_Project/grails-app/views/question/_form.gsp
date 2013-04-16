@@ -35,3 +35,11 @@
 	<g:textField name="question" value="${questionInstance?.question}"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: questionInstance, field: 'teacher', 'error')} required">
+	<label for="teacher">
+		<g:message code="question.teacher.label" default="Teacher" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select id="teacher" name="teacher.id" from="${jee_project.Teacher.list()}" optionKey="id" required="" value="${questionInstance?.teacher?.id}" class="many-to-one"/>
+</div>
+

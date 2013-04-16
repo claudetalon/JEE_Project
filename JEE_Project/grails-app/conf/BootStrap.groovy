@@ -25,11 +25,14 @@ class BootStrap {
 			sex : "M",
 			email : "frederic.migeon@gmail.com").save(failOnError:true)
 	
-		def q1 = new Question(question : "Quelle heure est-il ?", status: "opened").save(failOnError:true)
-		def q2 = new Question(question : "Quel temps fait-il ?" , status: "opened").save(failOnError:true)
+		def q1 = new Question(question : "Quelle heure est-il ?",
+			teacher : Teacher.findByNameAndFirstname("Migeon", "Frederic"),
+			status: "opened").save(failOnError:true)
 			
-		t1.addToQuestions(q1)
-		t1.addToQuestions(q2)
+		def q2 = new Question(question : "Quel temps fait-il ?",
+			teacher : Teacher.findByNameAndFirstname("Migeon", "Frederic"),
+			status: "opened").save(failOnError:true)
+			
 		
 		def a1 = new Answer(answer : "Il fait beau.",
 			question : Question.findByQuestion("Quel temps fait-il ?")).save(failOnError:true)
@@ -40,11 +43,6 @@ class BootStrap {
 		def a4 = new Answer(answer : "Il est 14H00",
 			question : Question.findByQuestion("Quel temps fait-il ?")).save(failOnError:true)
 		
-		/*
-		q2.addToAnswers(a1)
-		q2.addToAnswers(a2)
-		q2.addToAnswers(a3)
-		q2.addToAnswers(a4)*/
 		
     }
     def destroy = {

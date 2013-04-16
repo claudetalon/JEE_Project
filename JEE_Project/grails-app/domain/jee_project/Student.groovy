@@ -6,7 +6,7 @@ class Student extends User {
     static constraints = {
     }
 	
-	void answer(Question q){
-		
+	void vote(Answer a){
+		a.incrVote()
 	}
 }

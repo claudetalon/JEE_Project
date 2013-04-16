@@ -28,6 +28,8 @@
 					
 						<g:sortableColumn property="question" title="${message(code: 'question.question.label', default: 'Question')}" />
 					
+						<th><g:message code="question.teacher.label" default="Teacher" /></th>
+					
 					</tr>
 				</thead>
 				<tbody>
@@ -37,6 +39,8 @@
 						<td><g:link action="show" id="${questionInstance.id}">${fieldValue(bean: questionInstance, field: "status")}</g:link></td>
 					
 						<td>${fieldValue(bean: questionInstance, field: "question")}</td>
+					
+						<td>${fieldValue(bean: questionInstance, field: "teacher")}</td>
 					
 					</tr>
 				</g:each>

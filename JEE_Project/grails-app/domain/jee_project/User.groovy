@@ -4,7 +4,6 @@ abstract class User {
 
 	String name
 	String firstname
-	String password
 	String email
 	String sex
 	
@@ -16,7 +15,7 @@ abstract class User {
     }
 	
 	String toString() {
-		return "Nom : " + name + " Prenom : " + firstname
+		return firstname + " " + name
 	}
 	
 }

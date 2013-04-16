@@ -4,7 +4,7 @@ class Question {
 
 	String question
 	static hasMany = [answers : Answer]
-	static belongsTo = Teacher
+	Teacher teacher
 
 	String status
 

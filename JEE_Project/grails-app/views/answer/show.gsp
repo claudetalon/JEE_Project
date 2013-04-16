@@ -41,6 +41,24 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${answerInstance?.valid}">
+				<li class="fieldcontain">
+					<span id="valid-label" class="property-label"><g:message code="answer.valid.label" default="Valid" /></span>
+					
+						<span class="property-value" aria-labelledby="valid-label"><g:formatBoolean boolean="${answerInstance?.valid}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${answerInstance?.vote}">
+				<li class="fieldcontain">
+					<span id="vote-label" class="property-label"><g:message code="answer.vote.label" default="Vote" /></span>
+					
+						<span class="property-value" aria-labelledby="vote-label"><g:fieldValue bean="${answerInstance}" field="vote"/></span>
+					
+				</li>
+				</g:if>
+			
 			</ol>
 			<g:form>
 				<fieldset class="buttons">
