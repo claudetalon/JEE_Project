@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <%@ page import="jee_project.Question" %>
 
 
@@ -16,7 +15,16 @@
 		<g:message code="question.answers.label" default="Answers" />
 		
 	</label>
-	<g:select name="answers" from="${jee_project.Answer.list()}" multiple="multiple" optionKey="id" size="5" value="${questionInstance?.answers*.id}" class="many-to-many"/>
+	
+<ul class="one-to-many">
+<g:each in="${questionInstance?.answers?}" var="a">
+    <li><g:link controller="answer" action="show" id="${a.id}">${a?.encodeAsHTML()}</g:link></li>
+</g:each>
+<li class="add">
+<g:link controller="answer" action="create" params="['question.id': questionInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'answer.label', default: 'Answer')])}</g:link>
+</li>
+</ul>
+
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: questionInstance, field: 'question', 'error')} ">
@@ -27,5 +35,3 @@
 	<g:textField name="question" value="${questionInstance?.question}"/>
 </div>
 
-=======
->>>>>>> 526bb394b301b1d540e4243abb5572dc3240f2e3

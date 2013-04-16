@@ -3,7 +3,7 @@ package jee_project
 class Answer {
 	
 	String answer
-	static belongsTo = Question
+	Question question
 	
     static constraints = {
     }
