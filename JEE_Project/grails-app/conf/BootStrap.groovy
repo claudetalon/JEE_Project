@@ -1,3 +1,4 @@
+import jee_project.Question
 import jee_project.Student
 import jee_project.Teacher
 import jee_project.User
@@ -23,6 +24,12 @@ class BootStrap {
 			sex : "M",
 			email : "frederic.migeon@gmail.com").save(failOnError:true)
 	
+		def q1 = new Question(question : "Quelle heure est-il ?").save(failOnError:true)
+		def q2 = new Question(question : "Quel temps fait-il ?").save(failOnError:true)
+			
+		t1.addToQuestions(q1)
+		t1.addToQuestions(q2)
+		
     }
     def destroy = {
     }
