@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%@ page import="jee_project.Question" %>
 
 
@@ -26,3 +27,5 @@
 	<g:textField name="question" value="${questionInstance?.question}"/>
 </div>
 
+=======
+>>>>>>> 526bb394b301b1d540e4243abb5572dc3240f2e3
