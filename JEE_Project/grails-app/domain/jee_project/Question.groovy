@@ -11,10 +11,6 @@ class Question {
     static constraints = {
 		status blank: false, inList: ["closed","opened"]
     }
-	/*
-	void close() {
-		this.status = State.closed
-	}*/
 	
 	String toString() {
 		return question
