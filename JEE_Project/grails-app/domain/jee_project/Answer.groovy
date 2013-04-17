@@ -7,9 +7,6 @@ class Answer {
 	int vote = 0
 	Question question
 	
-	void incrVote(){
-		vote++
-	}
 	
     static constraints = {
     }
