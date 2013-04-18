@@ -29,6 +29,14 @@ class QuestionController {
         flash.message = message(code: 'default.created.message', args: [message(code: 'question.label', default: 'Question'), questionInstance.id])
         redirect(action: "show", id: questionInstance.id)
     }
+	
+	def vote(Long id){
+		def questionInstance = Question.get(id)
+		def answerInstance = Answer.get(params["answer"])
+		answerInstance.vote()
+		System.out.println("Vous avez voté !")
+		redirect(action: "show", id: questionInstance.id)
+	}
 
     def show(Long id) {
         def questionInstance = Question.get(id)
