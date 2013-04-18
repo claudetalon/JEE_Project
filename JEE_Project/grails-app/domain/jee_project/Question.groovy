@@ -9,6 +9,8 @@ class Question {
 
 	String status
 
+	static belongsTo = StudentGroup
+	
     static constraints = {
 		status blank: false, inList: ["closed","opened"]
     }

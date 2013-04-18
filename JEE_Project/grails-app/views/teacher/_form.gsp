@@ -34,6 +34,14 @@
 	<g:field type="email" name="email" value="${teacherInstance?.email}"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: teacherInstance, field: 'groups', 'error')} ">
+	<label for="groups">
+		<g:message code="teacher.groups.label" default="Groups" />
+		
+	</label>
+	<g:select name="groups" from="${jee_project.StudentGroup.list()}" multiple="multiple" optionKey="id" size="5" value="${teacherInstance?.groups*.id}" class="many-to-many"/>
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: teacherInstance, field: 'questions', 'error')} ">
 	<label for="questions">
 		<g:message code="teacher.questions.label" default="Questions" />

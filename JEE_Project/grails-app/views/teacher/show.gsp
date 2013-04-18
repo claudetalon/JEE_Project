@@ -59,6 +59,17 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${teacherInstance?.groups}">
+				<li class="fieldcontain">
+					<span id="groups-label" class="property-label"><g:message code="teacher.groups.label" default="Groups" /></span>
+					
+						<g:each in="${teacherInstance.groups}" var="g">
+						<span class="property-value" aria-labelledby="groups-label"><g:link controller="studentGroup" action="show" id="${g.id}">${g?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${teacherInstance?.questions}">
 				<li class="fieldcontain">
 					<span id="questions-label" class="property-label"><g:message code="teacher.questions.label" default="Questions" /></span>
