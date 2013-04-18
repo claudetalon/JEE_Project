@@ -11,6 +11,10 @@ class Answer {
     static constraints = {
     }
 	
+	void vote(){
+		vote++
+	}
+	
 	String toString() {
 		return answer
 	}

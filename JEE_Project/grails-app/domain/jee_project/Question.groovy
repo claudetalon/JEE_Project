@@ -13,8 +13,8 @@ class Question {
 		status blank: false, inList: ["closed","opened"]
     }
 	
-	void vote(){
-		
+	void voteReponse(Answer a){
+		a.vote()
 	}
 	
 	String toString() {

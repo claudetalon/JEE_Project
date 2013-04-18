@@ -17,11 +17,20 @@
 			</ul>
 		</div>
 		<div id="show-question" class="content scaffold-show" role="main">
-			<h1><g:message code="default.show.label" args="[entityName]" /></h1>
+			<h1><g:fieldValue bean="${questionInstance}" field="question"/></h1>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
 			<ol class="property-list question">
+				<!--		
+				<g:if test="${questionInstance?.question}">
+				<li class="fieldcontain">
+					<span id="question-label" class="property-label"><g:message code="question.question.label" default="Question" /></span>
+					
+						<span class="property-value" aria-labelledby="question-label"><g:fieldValue bean="${questionInstance}" field="question"/></span>
+					
+				</li>
+				</g:if>			
 			
 				<g:if test="${questionInstance?.status}">
 				<li class="fieldcontain">
@@ -31,32 +40,25 @@
 					
 				</li>
 				</g:if>
+				-->
 			
 				<g:if test="${questionInstance?.answers}">
 				<li class="fieldcontain">
 					<span id="answers-label" class="property-label"><g:message code="question.answers.label" default="Answers" /></span>
-					<FORM>
+					
+					<g:form name="vote" action="vote" id="${questionInstance?.id}" >
 						<g:each in="${questionInstance.answers}" var="a">
 						
-						<span class="property-value" aria-labelledby="answers-label"><INPUT type= "radio" name="tarif" value="jour" /><g:link controller="answer" action="show" id="${a.id}">${a?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="answers-label"><INPUT type= "radio" name="answer" value="${a.id}" /><g:link controller="answer" action="show" id="${a.id}">${a?.encodeAsHTML()}</g:link></span>
 						
 						</g:each>
-					</FORM>
-						<button>Voter</button>
-						
-							
-					
+						<br />
+						<span class="property-value" aria-labelledby="answers-label"><g:submitButton name="Voter"/></span>
+					</g:form>
 				</li>
 				</g:if>
 			
-				<g:if test="${questionInstance?.question}">
-				<li class="fieldcontain">
-					<span id="question-label" class="property-label"><g:message code="question.question.label" default="Question" /></span>
-					
-						<span class="property-value" aria-labelledby="question-label"><g:fieldValue bean="${questionInstance}" field="question"/></span>
-					
-				</li>
-				</g:if>
+				
 			
 				<g:if test="${questionInstance?.teacher}">
 				<li class="fieldcontain">

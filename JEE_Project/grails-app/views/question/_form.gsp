@@ -43,3 +43,11 @@
 	<g:select id="teacher" name="teacher.id" from="${jee_project.Teacher.list()}" optionKey="id" required="" value="${questionInstance?.teacher?.id}" class="many-to-one"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: questionInstance, field: 'totalVote', 'error')} required">
+	<label for="totalVote">
+		<g:message code="question.totalVote.label" default="Total Vote" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:field name="totalVote" type="number" value="${questionInstance.totalVote}" required=""/>
+</div>
+

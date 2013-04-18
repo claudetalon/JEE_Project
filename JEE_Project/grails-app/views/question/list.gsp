@@ -30,6 +30,8 @@
 					
 						<th><g:message code="question.teacher.label" default="Teacher" /></th>
 					
+						<g:sortableColumn property="totalVote" title="${message(code: 'question.totalVote.label', default: 'Total Vote')}" />
+					
 					</tr>
 				</thead>
 				<tbody>
@@ -41,6 +43,8 @@
 						<td>${fieldValue(bean: questionInstance, field: "question")}</td>
 					
 						<td>${fieldValue(bean: questionInstance, field: "teacher")}</td>
+					
+						<td>${fieldValue(bean: questionInstance, field: "totalVote")}</td>
 					
 					</tr>
 				</g:each>
