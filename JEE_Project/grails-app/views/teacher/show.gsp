@@ -70,6 +70,15 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${teacherInstance?.mdp}">
+				<li class="fieldcontain">
+					<span id="mdp-label" class="property-label"><g:message code="teacher.mdp.label" default="Mdp" /></span>
+					
+						<span class="property-value" aria-labelledby="mdp-label"><g:fieldValue bean="${teacherInstance}" field="mdp"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${teacherInstance?.questions}">
 				<li class="fieldcontain">
 					<span id="questions-label" class="property-label"><g:message code="teacher.questions.label" default="Questions" /></span>

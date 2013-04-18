@@ -10,18 +10,21 @@ class BootStrap {
 		
 		def s1 = new Student(firstname : "Claude",
 			name : "Talon",
+			mdp : "admin",
 			sex : "M",
 			email : "claude.talon@gmail.com").save(failOnError:true)
 			
 			
 		def s2 = new Student(firstname : "Loic",
 			name : "Martinez",
+			mdp : "admin",
 			sex : "M",
 			email : "loic.martinux@gmail.com").save(failOnError:true)
 			
 			
 		def t1 = new Teacher(firstname : "Frederic",
 			name : "Migeon",
+			mdp : "admin",
 			sex : "M",
 			email : "frederic.migeon@gmail.com").save(failOnError:true)
 	

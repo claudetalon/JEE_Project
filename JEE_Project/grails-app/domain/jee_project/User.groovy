@@ -4,6 +4,7 @@ abstract class User {
 
 	String name
 	String firstname
+	String mdp
 	String email
 	String sex
 	

@@ -68,6 +68,15 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${studentInstance?.mdp}">
+				<li class="fieldcontain">
+					<span id="mdp-label" class="property-label"><g:message code="student.mdp.label" default="Mdp" /></span>
+					
+						<span class="property-value" aria-labelledby="mdp-label"><g:fieldValue bean="${studentInstance}" field="mdp"/></span>
+					
+				</li>
+				</g:if>
+			
 			</ol>
 			<g:form>
 				<fieldset class="buttons">
