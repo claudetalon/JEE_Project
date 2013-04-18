@@ -17,6 +17,7 @@ class Question {
 	
 	void voteReponse(Answer a){
 		a.vote()
+		this.totalVote++
 	}
 	
 	String toString() {

@@ -24,13 +24,11 @@
 				<thead>
 					<tr>
 					
-						<g:sortableColumn property="status" title="${message(code: 'question.status.label', default: 'Status')}" />
+						<g:sortableColumn property="question" title="${message(code: 'question.status.label', default: 'Question')}" />
 					
-						<g:sortableColumn property="question" title="${message(code: 'question.question.label', default: 'Question')}" />
+						<g:sortableColumn property="status" title="${message(code: 'question.question.label', default: 'Status')}" />
 					
 						<th><g:message code="question.teacher.label" default="Teacher" /></th>
-					
-						<g:sortableColumn property="totalVote" title="${message(code: 'question.totalVote.label', default: 'Total Vote')}" />
 					
 					</tr>
 				</thead>
@@ -38,13 +36,11 @@
 				<g:each in="${questionInstanceList}" status="i" var="questionInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${questionInstance.id}">${fieldValue(bean: questionInstance, field: "status")}</g:link></td>
+						<td><g:link action="show" id="${questionInstance.id}">${fieldValue(bean: questionInstance, field: "question")}</g:link></td>
 					
-						<td>${fieldValue(bean: questionInstance, field: "question")}</td>
+						<td>${fieldValue(bean: questionInstance, field: "status")}</td>
 					
 						<td>${fieldValue(bean: questionInstance, field: "teacher")}</td>
-					
-						<td>${fieldValue(bean: questionInstance, field: "totalVote")}</td>
 					
 					</tr>
 				</g:each>

@@ -6,9 +6,11 @@ class Answer {
 	boolean valid = false
 	int vote = 0
 	Question question
+	String comment
 	
 	
     static constraints = {
+		comment(nullable:true)
     }
 	
 	void vote(){

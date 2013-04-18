@@ -24,7 +24,7 @@
 				<thead>
 					<tr>
 					
-						<g:sortableColumn property="answer" title="${message(code: 'answer.answer.label', default: 'Answer')}" />
+						<g:sortableColumn property="comment" title="${message(code: 'answer.comment.label', default: 'Answer')}" />
 					
 						<th><g:message code="answer.question.label" default="Question" /></th>
 					

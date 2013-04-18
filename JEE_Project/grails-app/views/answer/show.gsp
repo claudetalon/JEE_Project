@@ -23,6 +23,15 @@
 			</g:if>
 			<ol class="property-list answer">
 			
+				<g:if test="${answerInstance?.comment}">
+				<li class="fieldcontain">
+					<span id="comment-label" class="property-label"><g:message code="answer.comment.label" default="Comment" /></span>
+					
+						<span class="property-value" aria-labelledby="comment-label"><g:fieldValue bean="${answerInstance}" field="comment"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${answerInstance?.answer}">
 				<li class="fieldcontain">
 					<span id="answer-label" class="property-label"><g:message code="answer.answer.label" default="Answer" /></span>

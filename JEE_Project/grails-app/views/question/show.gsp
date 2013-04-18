@@ -49,11 +49,11 @@
 					<g:form name="vote" action="vote" id="${questionInstance?.id}" >
 						<g:each in="${questionInstance.answers}" var="a">
 						
-						<span class="property-value" aria-labelledby="answers-label"><INPUT type= "radio" name="answer" value="${a.id}" /><g:link controller="answer" action="show" id="${a.id}">${a?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="answers-label"><g:if test="${questionInstance?.status=="opened"}"><INPUT type= "radio" name="answer" value="${a.id}" /></g:if><g:link controller="answer" action="show" id="${a.id}">${a?.encodeAsHTML()}</g:link> <g:if test="${questionInstance?.status=="closed"}">${a.vote.encodeAsHTML()} %</g:if></span>
 						
 						</g:each>
 						<br />
-						<span class="property-value" aria-labelledby="answers-label"><g:submitButton name="Voter"/></span>
+						<span class="property-value" aria-labelledby="answers-label"><g:if test="${questionInstance?.status=="opened"}"><g:submitButton name="Voter"/></g:if></span>
 					</g:form>
 				</li>
 				</g:if>
