@@ -1,6 +1,7 @@
 import jee_project.Answer
 import jee_project.Question
 import jee_project.Student
+import jee_project.StudentGroup
 import jee_project.Teacher
 import jee_project.User
 
@@ -10,23 +11,23 @@ class BootStrap {
 		
 		def s1 = new Student(firstname : "Claude",
 			name : "Talon",
-			mdp : "admin",
 			sex : "M",
-			email : "claude.talon@gmail.com").save(failOnError:true)
+			email : "claude.talon@gmail.com",
+			mdp : "mdp").save(failOnError:true)
 			
 			
 		def s2 = new Student(firstname : "Loic",
 			name : "Martinez",
-			mdp : "admin",
 			sex : "M",
-			email : "loic.martinux@gmail.com").save(failOnError:true)
+			email : "loic.martinux@gmail.com",
+			mdp : "mdp").save(failOnError:true)
 			
 			
 		def t1 = new Teacher(firstname : "Frederic",
 			name : "Migeon",
-			mdp : "admin",
 			sex : "M",
-			email : "frederic.migeon@gmail.com").save(failOnError:true)
+			email : "frederic.migeon@gmail.com",
+			mdp : "mdp").save(failOnError:true)
 	
 		def q1 = new Question(question : "Quelle heure est-il ?",
 			teacher : Teacher.findByNameAndFirstname("Migeon", "Frederic"),
@@ -46,6 +47,10 @@ class BootStrap {
 		def a4 = new Answer(answer : "Il est 14H00",
 			question : Question.findByQuestion("Quel temps fait-il ?")).save(failOnError:true)
 		
+		def groupe = new StudentGroup(groupName : "Singing birds").save(failOnError:true)
+		
+		groupe.addToStudents(s1)
+		groupe.addToQuestions(q1)
 		
     }
     def destroy = {

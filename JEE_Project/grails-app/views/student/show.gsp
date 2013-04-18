@@ -68,13 +68,17 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${studentInstance?.mdp}">
-				<li class="fieldcontain">
-					<span id="mdp-label" class="property-label"><g:message code="student.mdp.label" default="Mdp" /></span>
-					
-						<span class="property-value" aria-labelledby="mdp-label"><g:fieldValue bean="${studentInstance}" field="mdp"/></span>
-					
-				</li>
+				<g:if test="${studentInstance?.gstudent?.questions}">
+					<li class="fieldcontain">
+						<span id="answers-label" class="property-label"><g:message code="student.gstudent.questions.label" default="Question" /></span>
+						
+							<g:each in="${studentInstance.gstudent.questions}" var="a">
+							
+							<span class="property-value" aria-labelledby="answers-label"><g:link controller="question" action="show" id="${a.id}">${a?.encodeAsHTML()}</g:link></span>
+							
+							</g:each>
+						
+					</li>
 				</g:if>
 			
 			</ol>

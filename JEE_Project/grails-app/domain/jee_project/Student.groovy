@@ -9,6 +9,6 @@ class Student extends User {
     }
 	
 	void vote(Answer a){
-		a.incrVote()
+		a.vote()
 	}
 }
