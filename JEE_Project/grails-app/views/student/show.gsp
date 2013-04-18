@@ -59,6 +59,15 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${studentInstance?.gstudent}">
+				<li class="fieldcontain">
+					<span id="gstudent-label" class="property-label"><g:message code="student.gstudent.label" default="Gstudent" /></span>
+					
+						<span class="property-value" aria-labelledby="gstudent-label"><g:link controller="studentGroup" action="show" id="${studentInstance?.gstudent?.id}">${studentInstance?.gstudent?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
 			</ol>
 			<g:form>
 				<fieldset class="buttons">

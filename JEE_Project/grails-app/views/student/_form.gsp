@@ -34,3 +34,11 @@
 	<g:field type="email" name="email" value="${studentInstance?.email}"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'gstudent', 'error')} required">
+	<label for="gstudent">
+		<g:message code="student.gstudent.label" default="Gstudent" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select id="gstudent" name="gstudent.id" from="${jee_project.StudentGroup.list()}" optionKey="id" required="" value="${studentInstance?.gstudent?.id}" class="many-to-one"/>
+</div>
+

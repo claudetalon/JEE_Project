@@ -2,9 +2,10 @@ package jee_project
 
 class Student extends User {
 
-	static belongsTo = StudentGroup
+	StudentGroup gstudent
 	
     static constraints = {
+		gstudent(nullable : true)
     }
 	
 	void vote(Answer a){
