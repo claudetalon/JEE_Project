@@ -1,5 +1,6 @@
 import jee_project.Answer
 import jee_project.Question
+import jee_project.Session
 import jee_project.Student
 import jee_project.StudentGroup
 import jee_project.Teacher
@@ -8,6 +9,8 @@ import jee_project.User
 class BootStrap {
 
     def init = { servletContext ->
+		
+		def c1 = new Session(login : "Talon", mdp : "mdp", role : "admin").save(failOnerror:true)
 		
 		def s1 = new Student(firstname : "Claude",
 			name : "Talon",

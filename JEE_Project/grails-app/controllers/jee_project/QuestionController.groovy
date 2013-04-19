@@ -34,7 +34,7 @@ class QuestionController {
 		def questionInstance = Question.get(id)
 		def answerInstance = Answer.get(params["answer"])
 		answerInstance.vote()
-		System.out.println("Vous avez voté !")
+		System.out.println("Le vote est pris en compte")
 		redirect(action: "show", id: questionInstance.id)
 	}
 
