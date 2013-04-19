@@ -49,7 +49,16 @@
 					<g:form name="vote" action="vote" id="${questionInstance?.id}" >
 						<g:each in="${questionInstance.answers}" var="a">
 						
-						<span class="property-value" aria-labelledby="answers-label"><g:if test="${questionInstance?.status=="opened"}"><INPUT type= "radio" name="answer" value="${a.id}" /></g:if><g:link controller="answer" action="show" id="${a.id}">${a?.encodeAsHTML()}</g:link> <g:if test="${questionInstance?.status=="closed"}">${a.vote.encodeAsHTML()}/${a.totalVote.encodeAsHTML()} %</g:if></span>
+						<span class="property-value" aria-labelledby="answers-label">
+						<g:if test="${questionInstance?.status=="opened"}">
+							<INPUT type= "radio" name="answer" value="${a.id}" />
+						</g:if>
+						
+						<g:link controller="answer" action="show" id="${a.id}">${a?.encodeAsHTML()}</g:link>
+							<g:if test="${questionInstance?.status=="closed"}">
+								${a.percentage.encodeAsHTML()} %
+							</g:if>
+						</span>
 						
 						</g:each>
 						<br />
