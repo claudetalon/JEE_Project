@@ -7,6 +7,7 @@ class Answer {
 	int vote = 0
 	Question question
 	String comment
+	int totalVote = 0
 	
 	
     static constraints = {
@@ -15,6 +16,11 @@ class Answer {
 	
 	void vote(){
 		vote++
+		totalVote = 0
+		List<Answer> answers = Answer.findAllByQuestion(question)
+		for (Answer a : answers) {
+			totalVote += a.vote
+		}
 	}
 	
 	String toString() {
