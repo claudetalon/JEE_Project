@@ -34,7 +34,6 @@
 					
 						<th><g:message code="student.gstudent.label" default="Gstudent" /></th>
 					
-						<g:sortableColumn property="mdp" title="${message(code: 'student.mdp.label', default: 'Mdp')}" />
 					
 					</tr>
 				</thead>
@@ -52,7 +51,6 @@
 					
 						<td>${fieldValue(bean: studentInstance, field: "gstudent")}</td>
 					
-						<td>${fieldValue(bean: studentInstance, field: "mdp")}</td>
 					
 					</tr>
 				</g:each>

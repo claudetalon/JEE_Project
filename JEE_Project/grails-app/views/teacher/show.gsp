@@ -13,11 +13,10 @@
 			<ul>
 				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
 				<li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
 			</ul>
 		</div>
 		<div id="show-teacher" class="content scaffold-show" role="main">
-			<h1><g:message code="default.show.label" args="[entityName]" /></h1>
+			<h1>Bienvenue ${teacherInstance?.firstname} ${teacherInstance?.name}</h1>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -37,15 +36,6 @@
 					<span id="firstname-label" class="property-label"><g:message code="teacher.firstname.label" default="Firstname" /></span>
 					
 						<span class="property-value" aria-labelledby="firstname-label"><g:fieldValue bean="${teacherInstance}" field="firstname"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${teacherInstance?.sex}">
-				<li class="fieldcontain">
-					<span id="sex-label" class="property-label"><g:message code="teacher.sex.label" default="Sex" /></span>
-					
-						<span class="property-value" aria-labelledby="sex-label"><g:fieldValue bean="${teacherInstance}" field="sex"/></span>
 					
 				</li>
 				</g:if>
@@ -70,14 +60,7 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${teacherInstance?.mdp}">
-				<li class="fieldcontain">
-					<span id="mdp-label" class="property-label"><g:message code="teacher.mdp.label" default="Mdp" /></span>
-					
-						<span class="property-value" aria-labelledby="mdp-label"><g:fieldValue bean="${teacherInstance}" field="mdp"/></span>
-					
-				</li>
-				</g:if>
+				
 			
 				<g:if test="${teacherInstance?.questions}">
 				<li class="fieldcontain">
@@ -94,8 +77,7 @@
 			<g:form>
 				<fieldset class="buttons">
 					<g:hiddenField name="id" value="${teacherInstance?.id}" />
-					<g:link class="edit" action="edit" id="${teacherInstance?.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-					<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+					<g:if test="${session?.name==teacherInstance?.name}"><g:link class="edit" action="edit" id="${teacherInstance?.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link></g:if>
 				</fieldset>
 			</g:form>
 		</div>

@@ -18,6 +18,23 @@ class SessionController {
     def create() {
         [sessionInstance: new Session(params)]
     }
+	
+	def connect(){
+		def teacherInstance = Teacher.findByNameAndMdp(params["login"], params["password"])
+		def studentInstance = Student.findByNameAndMdp(params["login"], params["password"])
+		
+		if (teacherInstance == null && studentInstance != null) {
+			session['ens'] = false
+			session['name'] = studentInstance.name
+			redirect(controller : "Student", action: "show", id: studentInstance.id)
+		} else if (studentInstance == null && teacherInstance != null) {
+			session['ens'] = true
+			session['name'] = teacherInstance.name
+			redirect(controller : "Teacher", action: "show", id: teacherInstance.id)
+		} else {
+			redirect(action: "connect")
+		}
+	}
 
     def save() {
         def sessionInstance = new Session(params)

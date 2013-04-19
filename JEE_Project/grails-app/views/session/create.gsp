@@ -8,12 +8,7 @@
 	</head>
 	<body>
 		<a href="#create-session" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-			</ul>
-		</div>
+		
 		<div id="create-session" class="content scaffold-create" role="main">
 			<h1 align="center">Connexion</h1>
 			<g:if test="${flash.message}">
@@ -26,11 +21,11 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:form align="center" action="save" >
+			<g:form align="center"  action="connect" >
 				<fieldset class="form">
 					<g:render template="form"/>
 					<br />
-					<g:submitButton name="create" class="save" value="Connexion" />
+					<g:submitButton name="connect"  value="Connexion" />
 				</fieldset>
 				
 				<fieldset class="buttons">
