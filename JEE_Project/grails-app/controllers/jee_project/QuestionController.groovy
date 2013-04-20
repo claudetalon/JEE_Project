@@ -39,11 +39,11 @@ class QuestionController {
 		
 		System.out.println(session.name)
 		
-		
+		System.out.println(questionInstance.voted.size())
 		for (Student s : questionInstance.voted) {
 			System.out.println("Ca marche")
 			
-			if (voted[i].id == Student.findByName(session.name).id) {
+			if (s.id == Student.findByName(session.name).id) {
 				System.out.println("Vous avez deja vote")
 				heAsVoted = true
 			}
