@@ -7,13 +7,11 @@
 	<body>
 		<%
 			def myDailyActivitiesColumns = [['string', 'Answer'], ['number', 'Percentage']]
-			def myDailyActivitiesData = "${questionInstance.list}"
-			print(myDailyActivitiesData)
 		 %>
 	
 		<gvisualization:pieCoreChart elementId="piechart"
 			title="Results" width="${450}" height="${300}"
-			columns="${myDailyActivitiesColumns}" data="${myDailyActivitiesData}" />
+			columns="${myDailyActivitiesColumns}" data="${questionInstance.list}" />
 		<div id="piechart"></div>
 	</body>
 </html>

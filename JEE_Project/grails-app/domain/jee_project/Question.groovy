@@ -27,7 +27,7 @@ class Question {
 		List<Answer> list = []
 		List<Answer> answers = Answer.findAllByQuestion(this)
 		for (Answer a : answers) {
-			list += [["'" + a.answer + "'", a.vote]]
+			list += [[a.answer, a.vote]]
 		}
 		
 		this.list= list
