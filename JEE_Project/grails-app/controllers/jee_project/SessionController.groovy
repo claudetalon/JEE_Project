@@ -32,7 +32,8 @@ class SessionController {
 			session['name'] = teacherInstance.name
 			redirect(controller : "Teacher", action: "show", id: teacherInstance.id)
 		} else {
-			redirect(action: "connect")
+			flash.message = message(code: 'default.connexion.message')
+			redirect(action: "create")
 		}
 	}
 	
