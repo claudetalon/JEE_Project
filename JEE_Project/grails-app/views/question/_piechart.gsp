@@ -7,8 +7,8 @@
 	<body>
 		<%
 			def myDailyActivitiesColumns = [['string', 'Answer'], ['number', 'Percentage']]
-			def myDailyActivitiesData = "${questionInstance.list}"
-			//print(${questionInstance.list})
+			def myDailyActivitiesData = [['Work', 11], ['Eat', 2], ['Commute', 2], ['Watch TV', 2], ['Sleep', 7]]
+			print("${questionInstance.list}")
 		 %>
 	
 		<gvisualization:pieCoreChart elementId="piechart"
