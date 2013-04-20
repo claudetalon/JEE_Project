@@ -6,7 +6,8 @@ class Question {
 	static hasMany = [answers : Answer]
 	Teacher teacher
 	int totalVote
-
+	def list
+	
 	String status
 
 	static belongsTo = StudentGroup
@@ -18,6 +19,18 @@ class Question {
 	void voteReponse(Answer a){
 		a.vote()
 		this.totalVote++
+	}
+	
+	def createListForPiechart() {
+		// def myDailyActivitiesData = [['Work', 11], ['Eat', 2],
+		//                              ['Commute', 2], ['Watch TV', 2], ['Sleep', 7]]
+		List<Answer> list = []
+		List<Answer> answers = Answer.findAllByQuestion(this)
+		for (Answer a : answers) {
+			list += [[a.question, a.vote]]
+		}
+		
+		return list
 	}
 	
 	String toString() {

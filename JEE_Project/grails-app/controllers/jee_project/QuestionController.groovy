@@ -45,7 +45,7 @@ class QuestionController {
             redirect(action: "list")
             return
         }
-
+		def list = questionInstance.createListForPiechart()
         [questionInstance: questionInstance]
     }
 

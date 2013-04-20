@@ -6,12 +6,13 @@
 	</head>
 	<body>
 		<%
-			def myDailyActivitiesColumns = [['string', 'Task'], ['number', 'Hours per Day']]
-			def myDailyActivitiesData = [['Work', 11], ['Eat', 2], ['Commute', 2], ['Watch TV', 2], ['Sleep', 7]]
+			def myDailyActivitiesColumns = [['string', 'Answer'], ['number', 'Percentage']]
+			def myDailyActivitiesData = ${questionInstance.list}
+			//print(${questionInstance.list})
 		 %>
 	
 		<gvisualization:pieCoreChart elementId="piechart"
-			title="My Daily Activities" width="${450}" height="${300}"
+			title="Results" width="${450}" height="${300}"
 			columns="${myDailyActivitiesColumns}" data="${myDailyActivitiesData}" />
 		<div id="piechart"></div>
 	</body>

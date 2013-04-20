@@ -74,10 +74,10 @@
 				<li class="fieldcontain">
 					<span id="answers-label" class="property-label"><g:message code="question.answers.label" default="Results" /></span>
 					
-					<g:form name="results" action="results" id="${questionInstance?.answers}" >
+					<g:form name="results" action="results" >
 						<span class="property-value" aria-labelledby="answers-label">
 								<fieldset class="form">
-									<g:render template="piechart" />
+									<g:render template="piechart" bean="${questionInstance}" />
 								</fieldset>
 						</span>
 					</g:form>
