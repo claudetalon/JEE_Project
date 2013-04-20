@@ -24,12 +24,14 @@ class Question {
 	def createListForPiechart() {
 		// def myDailyActivitiesData = [['Work', 11], ['Eat', 2],
 		//                              ['Commute', 2], ['Watch TV', 2], ['Sleep', 7]]
-		List<Answer> mylist = []
+		List<Answer> list = []
 		List<Answer> answers = Answer.findAllByQuestion(this)
 		for (Answer a : answers) {
-			mylist += [[a.answer, a.vote]]
+			list += [["'" + a.answer + "'", a.vote]]
 		}
-		this.list = mylist
+		
+		this.list= list
+		return list
 	}
 	
 	String toString() {

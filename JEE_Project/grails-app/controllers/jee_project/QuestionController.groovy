@@ -46,9 +46,6 @@ class QuestionController {
             return
         }
 		questionInstance.createListForPiechart()
-		for (int i = 0; i < questionInstance.list.size(); i++) {
-			System.out.println(questionInstance.list[i]);	
-		}
         [questionInstance: questionInstance]
     }
 
