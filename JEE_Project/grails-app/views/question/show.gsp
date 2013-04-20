@@ -74,9 +74,11 @@
 				<li class="fieldcontain">
 					<span id="answers-label" class="property-label"><g:message code="question.answers.label" default="Results" /></span>
 					
-					<g:form name="results" action="results" id="${questionInstance?.id}" >
+					<g:form name="results" action="results" id="${questionInstance?.answers}" >
 						<span class="property-value" aria-labelledby="answers-label">
-								<g:submitButton name="Voir résultats"/>
+								<fieldset class="form">
+									<g:render template="piechart" />
+								</fieldset>
 						</span>
 					</g:form>
 				</li>
