@@ -54,6 +54,8 @@ class BootStrap {
 		groupe.addToStudents(s1)
 		groupe.addToQuestions(q1)
 		
+		q1.addToAnswers(a4)
+		
     }
     def destroy = {
     }

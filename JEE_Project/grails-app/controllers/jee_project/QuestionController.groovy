@@ -37,9 +37,17 @@ class QuestionController {
 		def answerInstance = Answer.get(params["answer"])
 		def heAsVoted = false
 		
-		System.out.println(session.name)
+		Student s = Student.findByName(session.name)
 		
-		System.out.println(questionInstance.voted.size())
+		if (! questionInstance.voted.contains(s)) {
+			questionInstance.addToVoted(s)
+			answerInstance.vote()
+			System.out.println("Vote")
+		} else {
+			System.out.println("A deja vote")
+		}
+		System.out.println("dans la methode vote")
+		/*
 		for (Student s : questionInstance.voted) {
 			System.out.println("Ca marche")
 			
@@ -47,14 +55,14 @@ class QuestionController {
 				System.out.println("Vous avez deja vote")
 				heAsVoted = true
 			}
-		}
-	
-		if (heAsVoted == false){
+		}*/
+		/*
+		if (heAsVoted == false) {
 			questionInstance.addToVoted(Student.findByName(session.name))
 			answerInstance.vote()
-			System.out.println("Le vote est pris en compte")
-			System.out.println(questionInstance.voted.size())
-		}
+			//System.out.println("Le vote est pris en compte")
+			//System.out.println(questionInstance.voted.size())
+		}*/
 		
 		redirect(action: "show", id: questionInstance.id)
 	}
