@@ -1,5 +1,7 @@
 package jee_project
 
+import java.util.List;
+
 import org.springframework.dao.DataIntegrityViolationException
 
 class QuestionController {
@@ -33,8 +35,27 @@ class QuestionController {
 	def vote(Long id){
 		def questionInstance = Question.get(id)
 		def answerInstance = Answer.get(params["answer"])
-		answerInstance.vote()
-		System.out.println("Le vote est pris en compte")
+		def heAsVoted = false
+		
+		System.out.println(session.name)
+		
+		
+		for (Student s : questionInstance.voted) {
+			System.out.println("Ca marche")
+			
+			if (voted[i].id == Student.findByName(session.name).id) {
+				System.out.println("Vous avez deja vote")
+				heAsVoted = true
+			}
+		}
+	
+		if (heAsVoted == false){
+			questionInstance.addToVoted(Student.findByName(session.name))
+			answerInstance.vote()
+			System.out.println("Le vote est pris en compte")
+			System.out.println(questionInstance.voted.size())
+		}
+		
 		redirect(action: "show", id: questionInstance.id)
 	}
 

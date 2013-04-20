@@ -10,7 +10,6 @@ class BootStrap {
 
     def init = { servletContext ->
 		
-		def c1 = new Session(login : "Talon", mdp : "mdp", role : "admin").save(failOnerror:true)
 		
 		def s1 = new Student(firstname : "Claude",
 			name : "Talon",

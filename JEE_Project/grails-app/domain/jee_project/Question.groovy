@@ -7,6 +7,7 @@ class Question {
 	Teacher teacher
 	int totalVote
 	def list
+	def List<Student> voted = []
 	
 	String status
 
@@ -32,6 +33,10 @@ class Question {
 		
 		this.list= list
 		return list
+	}
+	
+	def addToVoted(Student s){	
+		voted.add(s)
 	}
 	
 	String toString() {

@@ -76,7 +76,7 @@
 					<g:form name="results" action="results" >
 						<span class="property-value" aria-labelledby="answers-label">
 								<fieldset class="form">
-									<g:render template="piechart" bean="${questionInstance}" />
+									<g:render template="piechart" />
 								</fieldset>
 						</span>
 					</g:form>
