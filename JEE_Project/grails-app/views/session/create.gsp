@@ -29,7 +29,7 @@
 				</fieldset>
 				
 				<fieldset class="buttons">
-					
+					<g:actionSubmit class="save" action="account" value="Créer un compte" />
 				</fieldset>
 			</g:form>
 		</div>

@@ -35,6 +35,11 @@ class SessionController {
 			redirect(action: "connect")
 		}
 	}
+	
+	def account(){	
+		System.out.println("Account creation")
+		redirect(controller : "Student", action: "create")
+	}
 
     def save() {
         def sessionInstance = new Session(params)

@@ -1,11 +1,14 @@
 /_formatter.gsp
 /_visualization_javascript.gsp
+/dbdoc
 /deprecated
 /formatter
-/index.gsp
 /grails
+/index.gsp
 /jee_project
+/messages.properties
 /org
+/spring
 /DbdocUrlMappings$__clinit__closure1.class
 /DbdocUrlMappings.class
 /DefaultCacheConfig$_run_closure1.class
@@ -77,3 +80,4 @@
 /ResourcesBootStrap$_closure1.class
 /ResourcesBootStrap$_closure2.class
 /ResourcesBootStrap.class
+/hibernate
