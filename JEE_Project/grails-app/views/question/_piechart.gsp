@@ -7,7 +7,7 @@
 	<body>
 		<%
 			def myDailyActivitiesColumns = [['string', 'Answer'], ['number', 'Percentage']]
-			def myDailyActivitiesData = ${questionInstance.list}
+			def myDailyActivitiesData = "${questionInstance.list}"
 			//print(${questionInstance.list})
 		 %>
 	
