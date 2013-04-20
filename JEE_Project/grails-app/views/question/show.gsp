@@ -56,7 +56,6 @@
 						
 								<g:link controller="answer" action="show" id="${a.id}">${a?.encodeAsHTML()}</g:link>
 									<g:if test="${questionInstance?.status=="closed"}">
-										${a.percentage.encodeAsHTML()} %
 									</g:if>
 							</span>
 						</g:each>

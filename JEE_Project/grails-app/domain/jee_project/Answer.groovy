@@ -8,7 +8,6 @@ class Answer {
 	Question question
 	String comment
 	int totalVote = 0
-	float percentage
 	
 	
     static constraints = {
@@ -23,11 +22,8 @@ class Answer {
 			totalVote += a.vote
 		}
 		
-		percentage = (vote / totalVote) * 100
-		
 		for (Answer a : answers) {
 			a.totalVote = totalVote
-			a.percentage = (a.vote / a.totalVote) * 100
 		}
 	}
 	
