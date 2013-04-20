@@ -49,25 +49,38 @@
 					<g:form name="vote" action="vote" id="${questionInstance?.id}" >
 						<g:each in="${questionInstance.answers}" var="a">
 						
-						<span class="property-value" aria-labelledby="answers-label">
-						<g:if test="${questionInstance?.status=="opened"}">
-							<INPUT type= "radio" name="answer" value="${a.id}" />
-						</g:if>
+							<span class="property-value" aria-labelledby="answers-label">
+								<g:if test="${questionInstance?.status=="opened"}">
+									<INPUT type= "radio" name="answer" value="${a.id}" />
+								</g:if>
 						
-						<g:link controller="answer" action="show" id="${a.id}">${a?.encodeAsHTML()}</g:link>
-							<g:if test="${questionInstance?.status=="closed"}">
-								${a.percentage.encodeAsHTML()} %
-							</g:if>
-						</span>
-						
+								<g:link controller="answer" action="show" id="${a.id}">${a?.encodeAsHTML()}</g:link>
+									<g:if test="${questionInstance?.status=="closed"}">
+										${a.percentage.encodeAsHTML()} %
+									</g:if>
+							</span>
 						</g:each>
 						<br />
-						<span class="property-value" aria-labelledby="answers-label"><g:if test="${questionInstance?.status=="opened"}"><g:submitButton name="Voter"/></g:if></span>
+						<span class="property-value" aria-labelledby="answers-label">
+							<g:if test="${questionInstance?.status=="opened"}">
+								<g:submitButton name="Voter"/>
+							</g:if>
+						</span>
 					</g:form>
 				</li>
 				</g:if>
 			
-				
+				<g:if test="${questionInstance?.status=="closed"}">
+				<li class="fieldcontain">
+					<span id="answers-label" class="property-label"><g:message code="question.answers.label" default="Results" /></span>
+					
+					<g:form name="results" action="results" id="${questionInstance?.id}" >
+						<span class="property-value" aria-labelledby="answers-label">
+								<g:submitButton name="Voir résultats"/>
+						</span>
+					</g:form>
+				</li>
+				</g:if>
 			
 				<g:if test="${questionInstance?.teacher}">
 				<li class="fieldcontain">
