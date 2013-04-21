@@ -34,4 +34,15 @@ class UserController {
 		redirect(controller : "Student", action : "create")	
 	}
 	
+	def goHome(){
+		def teacherInstance = Teacher.findByLogin(session.login)
+		def studentInstance = Student.findByLogin(session.login)
+		
+		if (teacherInstance == null && studentInstance != null) {
+			redirect(controller : "Student", action: "show", id: studentInstance.id)
+		} else if (studentInstance == null && teacherInstance != null) {
+			redirect(controller : "Teacher", action: "show", id: teacherInstance.id)
+		}	
+	}
+	
 }
