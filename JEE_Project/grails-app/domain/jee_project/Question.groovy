@@ -10,11 +10,13 @@ class Question {
 	static List<Vote> voted = []
 	
 	String status
+	String type
 
 	static belongsTo = StudentGroup
 	
     static constraints = {
 		status blank: false, inList: ["closed","opened"]
+		type blank: false, inList: ["sondage","question ouverte"]
     }
 	
 	void voteReponse(Answer a){

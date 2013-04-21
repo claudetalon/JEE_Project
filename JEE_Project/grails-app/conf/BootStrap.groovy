@@ -35,11 +35,11 @@ class BootStrap {
 	
 		def q1 = new Question(question : "Quelle heure est-il ?",
 			teacher : Teacher.findByNameAndFirstname("Migeon", "Frederic"),
-			status: "opened").save(failOnError:true)
+			status: "opened", type : "question ouverte").save(failOnError:true)
 			
 		def q2 = new Question(question : "Quel temps fait-il ?",
 			teacher : Teacher.findByNameAndFirstname("Migeon", "Frederic"),
-			status: "opened").save(failOnError:true)
+			status: "opened", type : "sondage").save(failOnError:true)
 			
 		
 		def a1 = new Answer(answer : "Il fait beau.",

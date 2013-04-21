@@ -1,4 +1,4 @@
-<%@ page import="jee_project.Session" %>
+<%@ page import="jee_project.User" %>
 <!DOCTYPE html>
 <html>
 	<head>

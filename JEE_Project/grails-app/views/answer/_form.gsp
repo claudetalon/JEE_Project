@@ -30,6 +30,16 @@
 </g:if>
 
 <g:if test="${session?.ens==true}">
+<div class="fieldcontain ${hasErrors(bean: answerInstance, field: 'note', 'error')} ">
+	<label for="note">
+		<g:message code="answer.comment.label" default="Note" />
+		
+	</label>
+	<g:textField name="note" value="${answerInstance?.note}"/>
+</div>
+</g:if>
+
+<g:if test="${session?.ens==true}">
 <div class="fieldcontain ${hasErrors(bean: answerInstance, field: 'valid', 'error')} ">
 	<label for="valid">
 		<g:message code="answer.valid.label" default="Valid" />

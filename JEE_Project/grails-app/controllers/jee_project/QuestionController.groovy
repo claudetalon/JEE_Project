@@ -39,14 +39,14 @@ class QuestionController {
 		
 		for (Vote v : questionInstance.voted) {
 			
-			if (v.s.id == Student.findByName(session.name).id & v.q.id== questionInstance.id) {
+			if (v.s.id == Student.findByLogin(session.login).id & v.q.id== questionInstance.id) {
 				System.out.println("Vous avez deja vote")
 				heAsVoted = true
 			}
 		}
 		
 		if (heAsVoted == false) {
-			Vote v = new Vote(s: Student.findByName(session.name), q : questionInstance)
+			Vote v = new Vote(s: Student.findByLogin(session.login), q : questionInstance)
 			questionInstance.addToVoted(v)
 			answerInstance.vote()
 			System.out.println("Le vote est pris en compte")

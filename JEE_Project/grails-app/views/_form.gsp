@@ -1,5 +1,4 @@
-<%@ page import="jee_project.Session" %>
-
+<%@ page import="jee_project.User" %>
 
 <div align="center">
 	<label  for="login">

@@ -7,11 +7,13 @@ class Answer {
 	int vote = 0
 	Question question
 	String comment
+	int note
 	int totalVote = 0
 	
 	
     static constraints = {
 		comment(nullable:true)
+		note(nullable:true)
     }
 	
 	void vote(){
