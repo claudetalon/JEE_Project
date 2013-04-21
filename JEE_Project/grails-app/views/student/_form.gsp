@@ -1,6 +1,15 @@
 <%@ page import="jee_project.Student" %>
 
 
+<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'login', 'error')} required">
+	<label for="login">
+		<g:message code="student.name.label" default="Login" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textField name="login" required="" value="${studentInstance?.login}"/>
+</div>
+
+
 
 <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'name', 'error')} required">
 	<label for="name">

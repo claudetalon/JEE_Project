@@ -18,6 +18,12 @@ class StudentController {
     def create() {
         [studentInstance: new Student(params)]
     }
+	
+	def disconnect(){
+		session.login = null
+		session.ens = false
+		redirect(controller : "Session", action : "create")
+	}
 
     def save() {
         def studentInstance = new Student(params)
