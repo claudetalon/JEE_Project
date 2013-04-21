@@ -36,20 +36,7 @@ class QuestionController {
 		def questionInstance = Question.get(id)
 		def answerInstance = Answer.get(params["answer"])
 		def heAsVoted = false
-		System.out.println("Ca marche")
 		
-		//Student s = Student.findByName(session.name)
-		/*
-		if (! questionInstance.voted.contains(s)) {
-			questionInstance.addToVoted(s)
-			answerInstance.vote()
-			System.out.println("Vote")
-			System.out.println(questionInstance.voted.size())
-		} else {
-			System.out.println("A deja vote")
-		}
-		System.out.println("dans la methode vote")
-		*/
 		for (Vote v : questionInstance.voted) {
 			
 			if (v.s.id == Student.findByName(session.name).id & v.q.id== questionInstance.id) {

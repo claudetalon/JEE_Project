@@ -22,26 +22,7 @@
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
 			<ol class="property-list question">
-				<!--		
-				<g:if test="${questionInstance?.question}">
-				<li class="fieldcontain">
-					<span id="question-label" class="property-label"><g:message code="question.question.label" default="Question" /></span>
-					
-						<span class="property-value" aria-labelledby="question-label"><g:fieldValue bean="${questionInstance}" field="question"/></span>
-					
-				</li>
-				</g:if>			
-			
-				<g:if test="${questionInstance?.status}">
-				<li class="fieldcontain">
-					<span id="status-label" class="property-label"><g:message code="question.status.label" default="Status" /></span>
-					
-						<span class="property-value" aria-labelledby="status-label"><g:fieldValue bean="${questionInstance}" field="status"/></span>
-					
-				</li>
-				</g:if>
-				-->
-			
+				
 				<g:if test="${questionInstance?.answers}">
 				<li class="fieldcontain">
 					<span id="answers-label" class="property-label"><g:message code="question.answers.label" default="Answers" /></span>
@@ -51,7 +32,7 @@
 						
 							<span class="property-value" aria-labelledby="answers-label">
 								<g:if test="${questionInstance?.status=="opened"}">
-									<INPUT type= "radio" name="answer" value="${a.id}" />
+									<g:if test="${session?.ens==false}"><INPUT type= "radio" name="answer" value="${a.id}" /></g:if>
 								</g:if>
 						
 								<g:link controller="answer" action="show" id="${a.id}">${a?.encodeAsHTML()}</g:link>
@@ -62,7 +43,7 @@
 						<br />
 						<span class="property-value" aria-labelledby="answers-label">
 							<g:if test="${questionInstance?.status=="opened"}">
-								<g:submitButton name="Voter"/>
+								<g:if test="${session?.ens==false}"><g:submitButton name="Voter"/></g:if>
 							</g:if>
 						</span>
 					</g:form>
@@ -71,9 +52,7 @@
 			
 				<g:if test="${questionInstance?.status=="closed"}">
 				<li class="fieldcontain">
-					<span id="answers-label" class="property-label"><g:message code="question.answers.label" default="Results" /></span>
-					
-					<g:form name="results" action="results" >
+					<g:form name="Resuktats" action="results" >
 						<span class="property-value" aria-labelledby="answers-label">
 								<fieldset class="form">
 									<g:render template="piechart" />

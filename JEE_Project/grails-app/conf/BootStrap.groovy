@@ -49,9 +49,10 @@ class BootStrap {
 		def a4 = new Answer(answer : "Il est 14H00",
 			question : Question.findByQuestion("Quel temps fait-il ?")).save(failOnError:true)
 		
-		def groupe = new StudentGroup(groupName : "Singing birds").save(failOnError:true)
+		def groupe = new StudentGroup(groupName : "Master Informatique").save(failOnError:true)
 		
 		groupe.addToStudents(s1)
+		groupe.addToStudents(s2)
 		groupe.addToQuestions(q1)
 		groupe.addToQuestions(q2)
 		

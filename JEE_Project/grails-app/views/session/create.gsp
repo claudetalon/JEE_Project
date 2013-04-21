@@ -21,9 +21,9 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:form align="center"  action="connect" >
+			<g:form align="center" controller="session" action="connect" >
 				<fieldset class="form">
-					<g:render template="form"/>
+					<g:render template="/session/form"/>
 					<br />
 					<g:submitButton name="connect"  value="Connexion" />
 				</fieldset>
