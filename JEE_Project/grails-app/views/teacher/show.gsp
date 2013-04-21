@@ -11,7 +11,7 @@
 		<a href="#show-teacher" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
 			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+				<li><g:link class="home" controller="user" action="goHome"><g:message code="default.home.label"/></g:link></li>
 				<li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
 				<li><g:link class="list" controller="studentGroup" action="list"><g:message code="Students Groups list" args="[entityName]" /></g:link></li>
 				<li><g:link controller="user" action="disconnect">Deconnecter ${session.login}</g:link></li>

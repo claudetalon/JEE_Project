@@ -11,8 +11,9 @@
 		<a href="#list-student" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
 			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+				<li><g:link class="home" controller="user" action="goHome"><g:message code="default.home.label"/></g:link></li>
 				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+				<li><g:link controller="user" action="disconnect">Deconnecter ${session.login}</g:link></li>
 			</ul>
 		</div>
 		<div id="list-student" class="content scaffold-list" role="main">
