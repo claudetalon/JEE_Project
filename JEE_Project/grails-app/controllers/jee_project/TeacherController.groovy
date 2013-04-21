@@ -80,6 +80,12 @@ class TeacherController {
         flash.message = message(code: 'default.updated.message', args: [message(code: 'teacher.label', default: 'Teacher'), teacherInstance.id])
         redirect(action: "show", id: teacherInstance.id)
     }
+	
+	def disconnect(){
+		session.ens = false
+		session.name = null
+		redirect(controller : "Session", action: "create")
+	}
 
     def delete(Long id) {
         def teacherInstance = Teacher.get(id)
