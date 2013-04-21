@@ -59,7 +59,7 @@ class BootStrap {
 		groupe.addToQuestions(q2)
 		
 		q1.addToAnswers(a4)
-		*/
+*/
     }
     def destroy = {
     }
