@@ -15,6 +15,7 @@ class BootStrap {
 			name : "Talon",
 			sex : "M",
 			email : "claude.talon@gmail.com",
+			login : "ctalon",
 			mdp : "mdp").save(failOnError:true)
 			
 			
@@ -22,6 +23,7 @@ class BootStrap {
 			name : "Martinez",
 			sex : "M",
 			email : "loic.martinux@gmail.com",
+			login : "lmartinez",
 			mdp : "mdp").save(failOnError:true)
 			
 			
@@ -29,6 +31,7 @@ class BootStrap {
 			name : "Migeon",
 			sex : "M",
 			email : "frederic.migeon@gmail.com",
+			login : "fmigeon",
 			mdp : "mdp").save(failOnError:true)
 	
 		def q1 = new Question(question : "Quelle heure est-il ?",

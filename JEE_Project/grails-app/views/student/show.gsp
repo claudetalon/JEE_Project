@@ -84,7 +84,7 @@
 			<g:form>
 				<fieldset class="buttons">
 					<g:hiddenField name="id" value="${studentInstance?.id}" />
-					<g:if test="${session?.name==studentInstance?.name}"><g:link class="edit" action="edit" id="${studentInstance?.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link></g:if>
+					<g:if test="${session?.login==studentInstance?.login}"><g:link class="edit" action="edit" id="${studentInstance?.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link></g:if>
 				</fieldset>
 			</g:form>
 		</div>

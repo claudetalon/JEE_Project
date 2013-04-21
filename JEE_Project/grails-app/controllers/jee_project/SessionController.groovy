@@ -20,16 +20,16 @@ class SessionController {
     }
 	
 	def connect(){
-		def teacherInstance = Teacher.findByNameAndMdp(params["login"], params["password"])
-		def studentInstance = Student.findByNameAndMdp(params["login"], params["password"])
+		def teacherInstance = Teacher.findByLoginAndMdp(params["login"], params["password"])
+		def studentInstance = Student.findByLoginAndMdp(params["login"], params["password"])
 		
 		if (teacherInstance == null && studentInstance != null) {
 			session['ens'] = false
-			session['name'] = studentInstance.name
+			session['login'] = studentInstance.login
 			redirect(controller : "Student", action: "show", id: studentInstance.id)
 		} else if (studentInstance == null && teacherInstance != null) {
 			session['ens'] = true
-			session['name'] = teacherInstance.name
+			session['login'] = teacherInstance.login
 			redirect(controller : "Teacher", action: "show", id: teacherInstance.id)
 		} else {
 			flash.message = message(code: 'default.connexion.message')
