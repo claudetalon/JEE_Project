@@ -2,13 +2,13 @@ class UrlMappings {
 
 	static mappings = {
 		"/$controller/$action?/$id?"{
-			controller = session
+			controller = user
 			constraints {
 				// apply constraints here
 			}
 		}
 
-		"/"(view:"/session/create")
+		"/"(view:"login")
 		"500"(view:'/error')
 	}
 }

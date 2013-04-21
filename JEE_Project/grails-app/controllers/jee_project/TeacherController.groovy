@@ -19,12 +19,6 @@ class TeacherController {
         [teacherInstance: new Teacher(params)]
     }
 	
-	def disconnect(){
-		session.login = null
-		session.ens = false
-		redirect(controller : "Session", action : "create")	
-	}
-
     def save() {
         def teacherInstance = new Teacher(params)
         if (!teacherInstance.save(flush: true)) {
