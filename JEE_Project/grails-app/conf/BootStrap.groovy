@@ -9,7 +9,7 @@ class BootStrap {
 
     def init = { servletContext ->
 		
-		
+		/*
 		def s1 = new Student(firstname : "Claude",
 			name : "Talon",
 			sex : "M",
@@ -59,7 +59,7 @@ class BootStrap {
 		groupe.addToQuestions(q2)
 		
 		q1.addToAnswers(a4)
-		
+		*/
     }
     def destroy = {
     }
