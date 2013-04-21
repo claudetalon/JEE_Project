@@ -30,4 +30,9 @@ class UserController {
 		render(view : "/login")
 	}
 	
+	def account(){
+		redirect(controller : "Student", action : "create")
+		
+	}
+	
 }

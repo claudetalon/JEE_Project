@@ -29,7 +29,7 @@ class StudentController {
 
         flash.message = message(code: 'default.created.message', args: [message(code: 'student.label', default: 'Student'), studentInstance.id])
 		session['ens'] = false
-		session['name'] = studentInstance.name
+		session['login'] = studentInstance.login
         redirect(action: "show", id: studentInstance.id)
     }
 
