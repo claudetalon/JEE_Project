@@ -11,6 +11,17 @@
 </div>
 </g:if>
 
+<g:if test="${session?.ens==true}">
+<div class="fieldcontain ${hasErrors(bean: questionInstance, field: 'type', 'error')} required">
+	<label for="type">
+		<g:message code="question.status.label" default="Type" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select name="type" from="${questionInstance.constraints.type.inList}" required="" value="${questionInstance?.type}" valueMessagePrefix="question.type"/>
+</div>
+</g:if>
+
+
 <div class="fieldcontain ${hasErrors(bean: questionInstance, field: 'question', 'error')} ">
 	<label for="question">
 		<g:message code="question.question.label" default="Question" />

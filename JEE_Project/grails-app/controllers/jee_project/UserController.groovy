@@ -31,8 +31,7 @@ class UserController {
 	}
 	
 	def account(){
-		redirect(controller : "Student", action : "create")
-		
+		redirect(controller : "Student", action : "create")	
 	}
 	
 }
