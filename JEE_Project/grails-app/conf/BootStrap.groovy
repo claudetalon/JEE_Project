@@ -53,6 +53,7 @@ class BootStrap {
 		
 		groupe.addToStudents(s1)
 		groupe.addToQuestions(q1)
+		groupe.addToQuestions(q2)
 		
 		q1.addToAnswers(a4)
 		
